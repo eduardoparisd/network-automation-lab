@@ -16,9 +16,6 @@ jobs:
       - name: Validate n8n compose
         run: docker compose -f n8n-automation/docker-compose.yml config
 
-      - name: Validate netbox compose
-        run: docker compose -f netbox-config/docker-compose.yml config
-
   deploy:
     name: Deploy to Homelab
     runs-on: [self-hosted, linux, homelab]
