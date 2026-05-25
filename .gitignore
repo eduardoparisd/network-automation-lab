@@ -1,0 +1,24 @@
+# Variables de entorno y secrets
+.env
+*.env
+env/
+
+# Datos de volúmenes Docker
+n8n-automation/n8n_data/
+
+# Proyectos que no quiero subir
+immich/
+observabilidad/
+netbox/
+
+# Carpeta limpia de netbox - solo ignora secrets
+netbox-config/env/
+
+# Archivos del sistema
+.DS_Store
+*.log 
+__pycache__/
+
+# Archivos de override con datos sensibles
+netbox-config/docker-compose.override.yml
+

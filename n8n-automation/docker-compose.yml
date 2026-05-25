@@ -1,0 +1,25 @@
+services:
+  n8n:
+    build: .
+    user: root
+    container_name: n8n-automation
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_SECURE_COOKIE=false
+      - NODE_FUNCTION_ALLOW_EXTERNAL=*
+      - N8N_RUNNERS_ENABLED=true
+    volumes:
+      - ./n8n_data:/root/.n8n
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      - netdevops-network
+      - homelab
+
+networks:
+  netdevops-network:
+    external: true
+  homelab:
+    external: true
